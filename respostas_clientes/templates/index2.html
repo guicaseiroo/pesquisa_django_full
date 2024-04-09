@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Campanha de Pesquisa</title>
+  </head>
+
+  <body>
+    <form action="{% url 'detalhes_campanha' id = campanha.id %}" method="post">
+      {% csrf_token %}
+      <input hidden="true" type="email" name="email" value="caseiro.gui@gmail.com" placeholder="Seu email" required />
+      {% for pergunta in perguntas %}
+        <fieldset>
+          <legend>{{ pergunta.pergunta_texto }}</legend>
+          {% for resposta in pergunta.respostas.all %}
+            <label>
+              <input type="radio" name="resposta_{{ pergunta.id }}" value="{{ resposta.id }}" required />
+              {{ resposta.resposta_texto }}
+            </label><br />
+          {% endfor %}
+        </fieldset>
+      {% endfor %}
+      <button type="submit">Enviar respostas</button>
+    </form>
+  </body>
+</html>
