@@ -5,14 +5,14 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
 from django.utils import timezone
 from .utils import encrypt_email, decrypt_email
-from time import sleep
+
+
 
 def cript(request):
     email = 'hello_word@gmail.com'  # O e-mail que você quer passar
     encrypted_email = encrypt_email(email)
     # Agora você pode passar encrypted_email na URL
     return HttpResponse(encrypted_email)
-
 
 def apresentacao_campanha(request, campanha_id, email):
     campanha = get_object_or_404(Campanha, pk=campanha_id)
