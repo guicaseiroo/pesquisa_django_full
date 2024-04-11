@@ -2,6 +2,7 @@ from pathlib import Path
 import sys
 import os
 from dotenv import load_dotenv
+import django.db.backends.mysql
 
 load_dotenv() 
 
@@ -23,7 +24,7 @@ SECRET_KEY = 'django-insecure-0#n+3z74iuk1p_6#=x-%*hzv$pzu_x5*jsupkt$*cg9@yrb40s
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -77,12 +78,26 @@ WSGI_APPLICATION = 'Pesquisa_Core.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+"""
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'u417647346_pesquisasams',
+        'USER': 'u417647346_sams',
+        'PASSWORD': 'C453iro@102030.',
+        'HOST': 'srv812.hstgr.io',  # Ou o endereço do seu servidor MySQL
+        'PORT': '3306',  # Porta padrão do MySQL
+    }
+}
+
 
 
 # Password validation

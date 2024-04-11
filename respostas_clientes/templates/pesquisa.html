@@ -115,7 +115,11 @@
         <hr class="my-6 border-t border-gray-300" />
         <!-- Botão para finalizar a pesquisa -->
         <div class="flex justify-end">
-          <button><a type="submit" class="w-full justify-end text-center py-2 px-4 border rounded border-[#1d428a] bg-white text-black cursor-pointer hover:bg-[#79a5fb] hover:border-[#79a5fb] focus:outline-none focus:ring-2 focus:ring-[#1d428a] focus:ring-opacity-50 transition-colors">Finalizar Pesquisa</a></button>
+          {% if tem_proxima_campanha %}
+            <button type="submit" class="w-full justify-end text-center py-2 px-4 border rounded border-[#1d428a] bg-white text-black cursor-pointer hover:bg-[#79a5fb] hover:border-[#79a5fb] focus:outline-none focus:ring-2 focus:ring-[#1d428a] focus:ring-opacity-50 transition-colors">Continuar Pesquisa</button>
+          {% else %}
+            <button type="submit" class="w-full justify-end text-center py-2 px-4 border rounded border-[#1d428a] bg-white text-black cursor-pointer hover:bg-[#79a5fb] hover:border-[#79a5fb] focus:outline-none focus:ring-2 focus:ring-[#1d428a] focus:ring-opacity-50 transition-colors">Finalizar Pesquisa</button>
+          {% endif %}
         </div>
       </form>
     </div>
