@@ -105,7 +105,7 @@
             </div>
             <div class="options-container">
               {% for resposta in pergunta.respostas.all %}
-                <input type="radio" id="option_{{ resposta.id }}" name="resposta_{{ pergunta.id }}" value="{{ resposta.id }}" class="radio-button hidden" />
+                <input type="radio" id="option_{{ resposta.id }}" name="resposta_{{ pergunta.id }}" value="{{ resposta.id }}" class="radio-button hidden" required />
                 <label for="option_{{ resposta.id }}" class="radio-button-label">{{ resposta.resposta_texto }}</label>
               {% endfor %}
             </div>

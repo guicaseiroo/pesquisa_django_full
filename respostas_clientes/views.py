@@ -44,5 +44,6 @@ def sucesso_campanha(request, campanha_id, email):
                     pergunta_id=pergunta_id,
                     resposta_texto=resposta_texto 
                 )
+                encrypt_mail = encrypt_email(email)
 
-    return render(request, 'fim_pesquisa.html', {'campanha': campanha_id, 'email': email})
+    return render(request, 'fim_pesquisa.html', {'campanha': campanha_id, 'email': encrypt_mail})

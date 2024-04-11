@@ -11,6 +11,7 @@ class Pergunta(models.Model):
 class Resposta(models.Model):
     resposta_pergunta = models.ForeignKey(Pergunta, related_name='respostas', on_delete=models.CASCADE)
     resposta_texto = models.CharField(max_length=100)
+    proxima_campanha = models.ForeignKey(Campanha, on_delete=models.SET_NULL, null=True, blank=True, related_name='proxima_campanha')
 
     def __str__(self):
         return self.resposta_texto
