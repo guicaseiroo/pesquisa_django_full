@@ -1,4 +1,5 @@
 db.sqlite3
 query.sql
 base_analítica.xlsx
-
+.env
+s
