@@ -12,7 +12,8 @@ def criptografar(email):
 
 
 lista = [
-    'teste.teste@tahto.com.br',
+    'teste@sams.com.br',
+    
 ]
 
 for i in lista:
