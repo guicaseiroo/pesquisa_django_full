@@ -61,7 +61,14 @@ def sucesso_campanha(request, campanha_id, email):
                 # Se a resposta leva a uma próxima campanha, recriptografe o e-mail antes do redirecionamento
                 if resposta.proxima_campanha:
                     nova_campanha_id = resposta.proxima_campanha.id
-                    # email_encrypted = encrypt_email(email_decrypted)  # Recriptografa o e-mail
+                    
+                    to_save_email = decrypt_email(email)
+                    RespostaUsuario.objects.create(
+                        email=to_save_email,
+                        campanha=campanha,
+                        pergunta_id=pergunta_id,
+                        resposta_texto=resposta.resposta_texto
+                    )
                     return HttpResponseRedirect(reverse('perguntas_respostas', args=(nova_campanha_id, email)))
 
                 to_save_email = decrypt_email(email)

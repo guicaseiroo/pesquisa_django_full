@@ -1,7 +1,7 @@
 from cryptography.fernet import Fernet
 import os
 
-FERNET_KEY = os.getenv('FERNET_KEY', 'odQvwmzW36jFf4TeaOnkv1tSpW-f61zUzB90-7dusTQ=')
+FERNET_KEY = os.getenv('FERNET_KEY')
 cipher_suite = Fernet(FERNET_KEY)
 
 def criptografar(email):
@@ -12,7 +12,7 @@ def criptografar(email):
 
 
 lista = [
-    'caseiro.gui@tahto.com',
+    'teste.teste@tahto.com.br',
 ]
 
 for i in lista:
