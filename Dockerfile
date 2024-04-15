@@ -15,7 +15,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copia o projeto para o container
 COPY . .
-COPY Pesquisa_Django Full /app/Pesquisa_Django Full/
+COPY Pesquisa_Django Full/media /root/pesquisa_django_full/media/
+COPY Pesquisa_Django Full/static /root/pesquisa_django_full/static/
 
 
 
