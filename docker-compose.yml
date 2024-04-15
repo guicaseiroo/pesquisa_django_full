@@ -14,7 +14,7 @@ services:
       - "80:80"
     volumes:
       - ./config/nginx:/etc/nginx/conf.d
-      - ./Static:/root/pesquisa_django_full/static
-      - ./Media:/root/pesquisa_django_full/media
+      - ./static:/root/pesquisa_django_full/static
+      - ./media:/root/pesquisa_django_full/media
     depends_on:
       - web
