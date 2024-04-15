@@ -10,8 +10,9 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 # Copia o arquivo de requisitos e instala as dependências
-COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+
 
 # Copia o projeto para o container
 COPY . .
