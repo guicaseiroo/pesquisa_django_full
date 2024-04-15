@@ -15,6 +15,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copia o projeto para o container
 COPY . .
+COPY Static /static
+COPY Media /media
+
 
 # Expõe a porta em que o Gunicorn vai rodar
 EXPOSE 8000

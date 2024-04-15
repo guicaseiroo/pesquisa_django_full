@@ -22,7 +22,7 @@ sys.path.append(
 SECRET_KEY = 'django-insecure-0#n+3z74iuk1p_6#=x-%*hzv$pzu_x5*jsupkt$*cg9@yrb40s'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
