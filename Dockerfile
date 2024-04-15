@@ -12,6 +12,8 @@ RUN apt-get update \
 # Copia o arquivo de requisitos e instala as dependências
 COPY requirements.txt .
 RUN pip install -r requirements.txt
+RUN pip install --force-reinstall mysqlclient
+
 
 
 # Copia o projeto para o container
