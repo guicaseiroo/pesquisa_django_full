@@ -20,4 +20,4 @@ COPY . .
 EXPOSE 8000
 
 # Executa o Gunicorn
-CMD ["gunicorn", "-b", "0.0.0.0:8000", "Projeto_Core.wsgi:application"]
+CMD ["gunicorn", "-b", "0.0.0.0:8000", "Pesquisa_Core.wsgi:application"]
