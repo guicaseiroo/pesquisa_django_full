@@ -2,7 +2,7 @@
 FROM python:3.12-slim
 
 # Define o diretório de trabalho no container
-WORKDIR /app
+#WORKDIR /app
 
 # Instale as dependências do sistema necessárias para compilar o mysqlclient
 RUN apt-get update \
